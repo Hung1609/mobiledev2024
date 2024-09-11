@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ForecastFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Mon"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_cloudy">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Partly Cloudy"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="24C - 30C"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Tue"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_showers">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Showers"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="24C - 31C"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Sun"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_thunderstorm">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Thunderstorms"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="24C - 27C"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
