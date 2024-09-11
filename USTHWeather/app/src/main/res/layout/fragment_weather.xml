@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#98FB98"
+    tools:context=".WeatherFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/weather_cloudy"
+        android:layout_centerInParent="true">
+    </ImageView>
+
+    <TextView
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/text1"
+        android:text="12C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center">
+    </TextView>
+
+    <TextView
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:layout_below="@id/text1"
+        android:text="Clody"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center">
+    </TextView>
+
+    <TextView
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:layout_alignParentRight="true"
+        android:text="Paris"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center">
+    </TextView>
+
+</RelativeLayout>
