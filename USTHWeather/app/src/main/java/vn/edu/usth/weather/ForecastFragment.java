@@ -66,4 +66,20 @@ public class ForecastFragment extends Fragment {
         v.setBackgroundColor(0x2000FFFF);
         return v;
     }
+    {
+        LinearLayout ll = new LinearLayout(getActivity());
+        ll.setOrientation(LinearLayout.VERTICAL);
+        ll.setBackgroundColor(0x20FF0000);
+
+        TextView text = new TextView(getContext());
+        text.setText("Today");
+
+        ImageView iv = new ImageView(getContext());
+        iv.setImageResource(R.drawable.weather_cloudy);
+
+        ll.addView(text);
+        ll.addView(iv);
+
+        return ll;
+    }
 }
