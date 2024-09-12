@@ -13,10 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +24,15 @@ public class WeatherActivity extends AppCompatActivity {
         ViewPager pager;
         pager = (ViewPager) findViewById(R.id.view_pager);
 
+        TabLayout tabLayout;
+        tabLayout = findViewById(R.id.tab);
+
         ViewPagerAdapter adapter;
         adapter= new ViewPagerAdapter(getSupportFragmentManager());
 
         pager.setAdapter(adapter);
+
+        tabLayout.setupWithViewPager(pager);
         /*
         // Create a new Fragment to be placed in the activity l
         ForecastFragment firstFragment = new ForecastFragment();
@@ -41,6 +45,7 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter{
+        private final String[] tabTitles = {"Hanoi", "HCM", "Paris"};
         public ViewPagerAdapter(FragmentManager fm){
             super(fm);
         }
@@ -53,6 +58,11 @@ public class WeatherActivity extends AppCompatActivity {
         @Override
         public int getCount(){
             return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position){
+            return tabTitles[position];
         }
     }
 
