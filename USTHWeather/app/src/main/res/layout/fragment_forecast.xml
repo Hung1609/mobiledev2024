@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ForecastFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -21,7 +22,8 @@
             android:text="Mon"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:gravity="center">
+            android:gravity="center"
+            android:textColor="@color/black">
         </TextView>
 
         <ImageView
@@ -43,7 +45,8 @@
                 android:layout_weight="0.5"
                 android:text="Partly Cloudy"
                 android:textStyle="bold"
-                android:textSize="20sp">
+                android:textSize="20sp"
+                android:textColor="@color/black">
             </TextView>
 
             <TextView
@@ -52,13 +55,13 @@
                 android:layout_weight="0.5"
                 android:text="24C - 30C"
                 android:textStyle="bold"
-                android:textSize="20sp">
+                android:textSize="20sp"
+                android:textColor="@color/black">
             </TextView>
 
         </LinearLayout>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,6 +76,61 @@
             android:text="Tue"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/black">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_showers">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Showers"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="24C - 31C"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Wed"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
             android:gravity="center">
         </TextView>
 
@@ -95,6 +153,7 @@
                 android:layout_weight="0.5"
                 android:text="Showers"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="20sp">
             </TextView>
 
@@ -102,8 +161,171 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="24C - 31C"
+                android:text="21C - 24C"
                 android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Thurs"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_sunny">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Sunny"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="20C - 25C"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Fri"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_rain">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Rain"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="25C - 27C"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Sat"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_cloudy">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Cloudy"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="21C - 24C"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="20sp">
             </TextView>
 
@@ -124,6 +346,7 @@
             android:text="Sun"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:textColor="@color/black"
             android:gravity="center">
         </TextView>
 
@@ -146,6 +369,7 @@
                 android:layout_weight="0.5"
                 android:text="Thunderstorms"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="20sp">
             </TextView>
 
@@ -155,6 +379,7 @@
                 android:layout_weight="0.5"
                 android:text="24C - 27C"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="20sp">
             </TextView>
 

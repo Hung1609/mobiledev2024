@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#98FB98"
+    android:background="@color/white"
     tools:context=".WeatherFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -22,7 +22,8 @@
         android:text="12C"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:textColor="@color/black">
     </TextView>
 
     <TextView
@@ -32,7 +33,8 @@
         android:text="Clody"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:textColor="@color/black">
     </TextView>
 
     <TextView
@@ -42,7 +44,8 @@
         android:text="Paris"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:textColor="@color/black">
     </TextView>
 
 </RelativeLayout>
