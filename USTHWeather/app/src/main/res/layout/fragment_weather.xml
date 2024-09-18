@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@drawable/frame_new"
     tools:context=".WeatherFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <ImageView
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/weather_cloudy"
-        android:layout_centerInParent="true">
-    </ImageView>
+        android:layout_centerVertical="true"
+        android:src="@drawable/weather_cloudy"></ImageView>
 
     <TextView
         android:layout_width="150sp"
@@ -28,6 +29,7 @@
     </TextView>
 
     <TextView
+        android:id="@+id/text2"
         android:layout_width="150sp"
         android:layout_height="50sp"
         android:layout_below="@id/text1"

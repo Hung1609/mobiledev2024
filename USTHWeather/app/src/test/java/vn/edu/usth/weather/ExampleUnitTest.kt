@@ -1,4 +1,4 @@
-package com.example.myapplication
+package vn.edu.usth.weather
 
 import org.junit.Test
 
