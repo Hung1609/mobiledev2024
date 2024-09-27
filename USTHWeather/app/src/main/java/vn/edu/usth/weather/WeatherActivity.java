@@ -1,6 +1,7 @@
 package vn.edu.usth.weather;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
@@ -14,6 +15,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
+import android.content.Context;
+import java.io.File;
+import java.io.OutputStream;
+import java.io.InputStream;
+import java.io.FileOutputStream;
+import android.media.MediaPlayer;
+import java.io.IOException;
 
 public class WeatherActivity extends AppCompatActivity {
     @Override
@@ -33,15 +41,45 @@ public class WeatherActivity extends AppCompatActivity {
         pager.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(pager);
-        /*
-        // Create a new Fragment to be placed in the activity l
-        ForecastFragment firstFragment = new ForecastFragment();
-        // Add the fragment to the 'container' FrameLayout
-        WeatherFragment secondFragment = new WeatherFragment();
 
-        getFragmentManager().beginTransaction().add(R.id.fragment_forecast, firstFragment).commit();
-        getFragmentManager().beginTransaction().add(R.id.fragment_weather, secondFragment).commit();
-        */
+        rawToSdcard(this,R.raw.mobile_app,"mobile_app.mp3");
+
+        Audio("mobile_app.mp3");
+    }
+
+    public void rawToSdcard(Context context, int resourceId, String fileName){
+        InputStream inputStream = context.getResources().openRawResource(resourceId);
+        File sdCardDir = Environment.getExternalStorageDirectory();
+        File outFile = new File(sdCardDir, fileName);
+
+        try {
+            OutputStream outputStream = new FileOutputStream(outFile);
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, length);
+            }
+            outputStream.close();
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private MediaPlayer mediaPlayer;
+
+    public void Audio(String fileName){
+        File sdCardDir = Environment.getExternalStorageDirectory();
+        File audioFile = new File(sdCardDir, fileName);
+        mediaPlayer = new MediaPlayer();
+        try {
+            mediaPlayer.setDataSource(audioFile.getAbsolutePath());
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+        } catch (IOException e) {
+            Log.e("WeatherActivity", "Error playing audio: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter{
@@ -65,40 +103,4 @@ public class WeatherActivity extends AppCompatActivity {
             return tabTitles[position];
         }
     }
-
-    /*
-    public WeatherActivity() {
-        super();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i("Weather", "onStart here");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("Weather", "onStop here");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("Weather", "onDestroy here");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("Weather", "onPause here");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i("Weather", "onResume here");
-    }
-     */
 }
