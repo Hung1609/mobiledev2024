@@ -5,6 +5,12 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+import android.view.MenuInflater;
+import android.content.Intent;
+import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -35,15 +41,15 @@ public class WeatherActivity extends AppCompatActivity {
         TabLayout tabLayout;
         tabLayout = findViewById(R.id.tab);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         ViewPagerAdapter adapter;
         adapter= new ViewPagerAdapter(getSupportFragmentManager());
-
         pager.setAdapter(adapter);
-
         tabLayout.setupWithViewPager(pager);
 
         rawToSdcard(this,R.raw.mobile_app,"mobile_app.mp3");
-
         Audio("mobile_app.mp3");
     }
 
@@ -79,6 +85,28 @@ public class WeatherActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("WeatherActivity", "Error playing audio: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if(itemId == R.id.refresh){
+            Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (itemId == R.id.setting) {
+            Intent intent = new Intent(this, PrefActivity.class);
+            startActivity(intent);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
