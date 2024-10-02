@@ -14,19 +14,19 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/sunny"
+            android:src="@drawable/cloudy_2"
             android:layout_centerInParent="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sunny"
+            android:text="@string/cloudy"
             android:textSize="20sp"
             android:layout_marginTop="30dp"
             android:layout_marginStart="50dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hanoi"
+            android:text="@string/paris"
             android:layout_alignParentEnd="true"
             android:textSize="20sp"
             tools:ignore="RelativeOverlap"

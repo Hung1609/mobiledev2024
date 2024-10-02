@@ -7,16 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ForecastFragment#newInstance} factory method to
+ * Use the {@link ForecastFragment_2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ForecastFragment extends Fragment {
+public class ForecastFragment_2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +24,7 @@ public class ForecastFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ForecastFragment() {
+    public ForecastFragment_2() {
         // Required empty public constructor
     }
 
@@ -37,11 +34,11 @@ public class ForecastFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ForecastFragment.
+     * @return A new instance of fragment ForecastFragment_2.
      */
     // TODO: Rename and change types and number of parameters
-    public static ForecastFragment newInstance(String param1, String param2) {
-        ForecastFragment fragment = new ForecastFragment();
+    public static ForecastFragment_2 newInstance(String param1, String param2) {
+        ForecastFragment_2 fragment = new ForecastFragment_2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,24 +58,7 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        /*
-        LinearLayout li = new LinearLayout(getContext());
-        li.setBackgroundColor(0x2000FFFF);
-        li.setOrientation(LinearLayout.VERTICAL);
-
-        TextView textView = new TextView(getContext());
-        textView.setText("Thursday");
-
-        ImageView imageView = new ImageView(getContext());
-        imageView.setImageResource(R.drawable.weather_icon);
-
-        li.addView(textView);
-        li.addView(imageView);
-
-        return li;
-         */
-        View v = inflater.inflate(R.layout.fragment_forecast, container, false);
-        return v;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_forecast_2, container, false);
     }
-
 }

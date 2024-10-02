@@ -5,37 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".WeatherActivity">
+    tools:context=".WeatherActivity"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="wrap_content"
+        app:popupTheme="@style/Theme.Material3.DayNight.NoActionBar"
+        app:title="USTH Weather"/>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <!--
-    <fragment
-        android:id="@+id/fragment_weather"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="vn.edu.usth.weather.WeatherFragment">
-    </fragment>
+        android:id="@+id/viewPager" />
 
-    <fragment
-        android:id="@+id/fragment_forecast"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:name="vn.edu.usth.weather.ForecastFragment">
-    </fragment>
-    -->
 </LinearLayout>

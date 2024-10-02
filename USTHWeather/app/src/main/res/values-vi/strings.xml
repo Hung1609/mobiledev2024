@@ -1,17 +1,25 @@
 <resources>
-    <string name="app_name">USTH Weather</string>
-    <string name="mon">Thứ 2</string>
-    <string name="tues">Thứ 3</string>
-    <string name="wed">Thứ 4</string>
-    <string name="thurs">Thứ 5</string>
-    <string name="fri">Thứ 6</string>
-    <string name="sat">Thứ 7</string>
-    <string name="sun">Chủ nhật</string>
-    <string name="cloudy">Mây nhiều</string>
-    <string name="partly_cloudy">Mây ít</string>
-    <string name="showers">Mưa lớn</string>
-    <string name="sunny">Nắng</string>
-    <string name="rain">Mưa</string>
-    <string name="thunder">Sấm chớp</string>
+    // App name
+    <string name="app_name">Thời tiết USTH</string>
+
+    // ForecastFragment values
+    <string name="days">Thứ Hai\nThứ Ba\nThứ Tư\nThứ Năm\nThứ Sáu\nThứ Bảy\nChủ Nhật\nThứ Hai\nThứ Ba\nThứ Tư</string>
+    <string name="mon">Có Mây\n24C - 31C</string>
+    <string name="tue">Mưa Rào\n24C - 20C</string>
+    <string name="wed">Mưa\n22C - 23C</string>
+    <string name="thu">Mưa Rải Rác\n22C - 27C</string>
+    <string name="fri">Nhiều Mây\n22C - 20C</string>
+    <string name="sat">Có Mây\n24C - 31C</string>
+    <string name="sun">Giông Bão\n25C - 28C</string>
+    <string name="mon2">Giông Bão Rải Rác\n24C - 27C</string>
+    <string name="tue2">Mưa Rào\n24C - 26C</string>
+    <string name="wed2">Giông Bão Rải Rác\n23C - 27C</string>
+
+    // WeatherFragment values
+    <string name="sunny">31C\nNắng</string>
     <string name="hanoi">Hà Nội</string>
+    <string name="showers">26C\nMưa Rào</string>
+    <string name="HCM">TP. Hồ Chí Minh</string>
+    <string name="cloudy">12C\nNhiều Mây</string>
+    <string name="paris">Paris</string>
 </resources>
