@@ -2,6 +2,7 @@ package vn.edu.usth.weather;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -33,7 +34,7 @@ import java.io.OutputStream;
 
 public class WeatherActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
-    private Handler handler = new Handler(Looper.getMainLooper());
+    //private Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +131,7 @@ public class WeatherActivity extends AppCompatActivity {
         int id = item.getItemId();
         // Handle the refresh action
         if (id == R.id.refresh) {
-            refreshContent();
+            RefreshContent();
             return true;
         }
         // Handle the settings action
@@ -142,23 +143,24 @@ public class WeatherActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void refreshContent() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(WeatherActivity.this, "some sample json here", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+    private class RefreshTask extends AsyncTask<Void, Void, String>{
+        @Override
+        protected String doInBackground(Void... voids){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e){
+                e.printStackTrace();
             }
-        }).start();
+            return "sample json data";
+        }
+
+        @Override
+        protected void onPostExecute(String result){
+            Toast.makeText(WeatherActivity.this, result, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void RefreshContent() {
+       new RefreshTask().execute();
     }
 }
