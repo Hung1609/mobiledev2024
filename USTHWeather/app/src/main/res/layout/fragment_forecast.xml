@@ -6,10 +6,11 @@
     tools:context=".ForecastFragment" >
 
     <LinearLayout
+        android:id="@+id/forecast_layout"
         android:layout_width="400dp"
         android:layout_height="650dp"
         android:orientation="horizontal"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true">
 
         <!-- Day -->
         <LinearLayout
@@ -89,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="20dp" >
+            android:layout_marginLeft="20dp" >
 
             <TextView
                 android:layout_width="wrap_content"

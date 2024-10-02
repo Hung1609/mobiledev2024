@@ -6,6 +6,7 @@
     tools:context=".ForecastFragment" >
 
     <LinearLayout
+        android:id="@+id/forecast_layout_3"
         android:layout_width="400dp"
         android:layout_height="650dp"
         android:orientation="horizontal"

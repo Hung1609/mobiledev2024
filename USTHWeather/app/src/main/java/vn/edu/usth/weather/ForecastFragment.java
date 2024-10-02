@@ -1,15 +1,27 @@
 package vn.edu.usth.weather;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
+import android.os.Binder;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,6 +70,8 @@ public class ForecastFragment extends Fragment {
         }
     }
 
+    private LinearLayout forecastLayout;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,7 +92,51 @@ public class ForecastFragment extends Fragment {
         return li;
          */
         View v = inflater.inflate(R.layout.fragment_forecast, container, false);
+
+        forecastLayout = v.findViewById(R.id.forecast_layout);
+        new DownImageTask().execute("https://usth.edu.vn/wp-content/uploads/2021/11/logo.png");
+
         return v;
     }
 
+    private class DownImageTask extends AsyncTask<String, Void, Bitmap>{
+        @Override
+        protected Bitmap doInBackground(String... urls) {
+            String url = urls[0];
+            Bitmap logoBitmap = null;
+            try {
+                // Initialize URL
+                URL imageUrl = new URL(url);
+
+                // Make a request to the server
+                HttpURLConnection connection = (HttpURLConnection) imageUrl.openConnection();
+                connection.setRequestMethod("GET");
+                connection.setDoInput(true);
+                connection.connect();
+
+                // Receive the response code and log it
+                int responseCode = connection.getResponseCode();
+                Log.i("USTHWeather", "The response code is: " + responseCode);
+
+                // Process the image response
+                InputStream inputStream = connection.getInputStream();
+                logoBitmap = BitmapFactory.decodeStream(inputStream);
+
+                inputStream.close();
+                connection.disconnect();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return logoBitmap;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap){
+            if(bitmap!=null){
+                Drawable drawable = new BitmapDrawable(getResources(),bitmap);
+                forecastLayout.setBackground(drawable);
+            }
+        }
+    }
 }
